@@ -1,0 +1,13 @@
+body {
+    background:rgb(125, 198, 205);
+    color: rgb(45, 45, 45);
+    padding: 10px;
+    font-family: arial, sans-serif;
+}
+
+#all-contents{
+    max-width: 800px;
+    margin: auto
+}
+
+/*navigation menu*/
