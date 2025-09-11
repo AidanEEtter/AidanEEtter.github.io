@@ -1,5 +1,6 @@
 body {
-  background: rgb(3, 72, 245);
+ background-image: url("images/limgrave.jpg");
+  background-size: cover;
   color: rgb(0, 0, 0);
   padding: 10px;
   font-family: arial, sans-serif;
