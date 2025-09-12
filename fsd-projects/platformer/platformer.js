@@ -40,13 +40,18 @@ $(function () {
     createPlatform(600, 200, 40, 10, "lime");
     createPlatform(850, 200, 66, 10, "lime");
     createPlatform(1225, 300, 200, 10, "lime")
-    createPlatform(400, 505, 10, 150)
-    createPlatform(500, 605, 10, 135)
-    createPlatform(600, 505, 10, 150)
-    createPlatform(700, 605, 10, 135)
-    createPlatform(800, 505, 10, 150)
-    createPlatform(900, 605, 10, 135)
-    createPlatform(1000, 505, 10, 135)
+    createPlatform(400, 505, 10, 150, "lime")
+    createPlatform(500, 605, 10, 135, "lime")
+    createPlatform(600, 505, 10, 150, "lime")
+    createPlatform(700, 605, 10, 135, "lime")
+    createPlatform(800, 505, 10, 150, "lime")
+    createPlatform(900, 605, 10, 135, "lime")
+    createPlatform(1000, 505, 10, 135, "lime")
+    createPlatform(1100, 605, 10, 135, "lime")
+    createPlatform(1200, 505, 10, 150, "lime")
+    createPlatform(1300, 605, 10, 135, "lime")
+    
+    
     
 
     // TODO 3 - Create Collectables
