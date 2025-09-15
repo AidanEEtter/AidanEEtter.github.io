@@ -1,12 +1,16 @@
 body {
+ 
   margin: 0px;
 }
 
 canvas {
-  background-color: lightblue;
+  background-color: rgba(0, 0, 0, 0);
   margin: 20px;
+   background-image: url("images/limgraves.jpg");
+  background-size: cover;
 }
 
 img {
+  
   display: none;
 }
