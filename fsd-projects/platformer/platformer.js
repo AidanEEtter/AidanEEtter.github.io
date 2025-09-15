@@ -30,31 +30,31 @@ $(function () {
    //toggleGrid();
 
     // TODO 2 - Create Platforms
-    createPlatform(0, 150, 200, 10, "lime");
-    createPlatform(250, 280, 100, 10, "lime");
-    createPlatform(180, 400, 40, 10, "lime");
-    createPlatform(50, 505, 80, 10, "lime");
-    createPlatform(250, 640, 10, 100, "lime");
-    createPlatform(400, 505, 1000, 10, "lime");
-    createPlatform(400, 150, 40, 10, "lime");
-    createPlatform(600, 200, 40, 10, "lime");
-    createPlatform(850, 200, 66, 10, "lime");
-    createPlatform(1225, 300, 200, 10, "lime")
-    createPlatform(400, 505, 10, 150, "lime")
-    createPlatform(500, 605, 10, 135, "lime")
-    createPlatform(600, 505, 10, 150, "lime")
-    createPlatform(700, 605, 10, 135, "lime")
-    createPlatform(800, 505, 10, 150, "lime")
-    createPlatform(900, 605, 10, 135, "lime")
-    createPlatform(1000, 505, 10, 135, "lime")
-    createPlatform(1100, 605, 10, 135, "lime")
-    createPlatform(1200, 505, 10, 150, "lime")
+    createPlatform(0, 150, 200, 10, "#462BE5");
+    createPlatform(250, 280, 100, 10, "#462BE5");
+    createPlatform(180, 400, 40, 10, "#462BE5");
+    createPlatform(50, 505, 80, 10, "#462BE5");
+    createPlatform(250, 640, 10, 100, "#462BE5");
+    createPlatform(400, 505, 1000, 10, "#462BE5");
+    createPlatform(400, 150, 40, 10, "#462BE5");
+    createPlatform(600, 200, 40, 10, "#462BE5");
+    createPlatform(850, 200, 66, 10, "#462BE5", 800, 900, 5);
+    createPlatform(1225, 300, 200, 10, "#462BE5")
+    createPlatform(400, 505, 10, 150, "#462BE5")
+    createPlatform(500, 605, 10, 135, "#462BE5")
+    createPlatform(600, 505, 10, 150, "#462BE5")
+    createPlatform(700, 605, 10, 135, "#462BE5")
+    createPlatform(800, 505, 10, 150, "#462BE5")
+    createPlatform(900, 605, 10, 135, "#462BE5")
+    createPlatform(1000, 505, 10, 135, "#462BE5")
+    createPlatform(1100, 605, 10, 135, "#462BE5")
+    createPlatform(1200, 505, 10, 150, "#462BE5")
   
 
     // TODO 3 - Create Collectables
     createCollectable("great", 1300, 630, .5)
     createCollectable("great2", 1300, 230, .5)
-    createCollectable("great3", 400, 420, 1, 1, 400, 1380, 10)
+    createCollectable("great3", 400, 300, 1, 1, 400, 1380, 10)
 
     // TODO 4 - Create Cannons
     createCannon("left", 200, 5000)
