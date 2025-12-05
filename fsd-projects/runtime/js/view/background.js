@@ -34,8 +34,7 @@ var background = function (window) {
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         var tree = draw.bitmap("img/tree.png");
-        var buildingHeight = 200
-        var building
+        var buildings = []
         function render() {
             background.removeAllChildren();
 
@@ -63,6 +62,14 @@ var background = function (window) {
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
+            for (var i = 0; i < 5; ++i) {
+             var buildingHeight = 300;
+              var building = draw.rect(75, buildingHeight, "LightGray", "Black", 1);
+             building.x = 200 * i;
+              building.y = groundY - buildingHeight;
+              background.addChild(building);
+              buildings.push(building);
+}
             
             // TODO 3: Part 1 - Add a tree
           
