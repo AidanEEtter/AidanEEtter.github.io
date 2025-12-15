@@ -19,11 +19,75 @@ var runLevels = function (window) {
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
 
-    var hitZoneSize = 25;
-    var damageFromObstacle = 10;
-    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
-    
+    function createSawBlade(width , hight){
 
+      var hitZoneSize = 25;
+      var damageFromObstacle = 10;
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+
+      sawBladeHitZone.x = width;
+      sawBladeHitZone.y = hight;
+      game.addGameItem(sawBladeHitZone);
+
+      var obstacleImage = draw.bitmap("img/sawblade.png");
+      sawBladeHitZone.addChild(obstacleImage);
+      obstacleImage.x = hitZoneSize * -1
+      obstacleImage.y = hitZoneSize * -1
+    }
+
+    createSawBlade(900, 300)
+    createSawBlade(900, 200)
+
+    function createEnemy(x, y) {
+    var enemy = game.createGameItem("enemy", 25);
+    var redSquare = draw.rect(50, 50, "red");
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);
+
+    enemy.x = x;
+    enemy.y = y;
+    game.addGameItem(enemy);
+
+    enemy.velocityX = -1;
+    enemy.rotationalVelocity = -10;
+
+    enemy.onPlayerCollision = function () {
+      game.changeIntegrity(-50)
+    };
+
+    enemy.onProjectileCollision = function () {
+      game.increaseScore(100);
+      enemy.fadeOut();
+    } 
+  }
+    createEnemy(600, groundY - 50);
+    createEnemy(500, groundY - 50);
+    createEnemy(700, groundY - 50);
+
+    function createReward(x, y){
+      var coin = gamecreateGameItem("reward", 25)
+      var yellowCube = draw.rect(25, 25, "yellow")
+      yellowCube.x = -25
+      yellowCube.y = -25
+      coin.addChild(yellowCube)
+
+      coin.x = x
+      coin.y = y
+      game.addGameItem(coin)
+
+      coin.velocityX = -5
+
+      coin.onPlayerCollision = function () {
+        game.increaseScore(100)
+      }
+
+      coin.onProjectileCollision = function () {
+        game.increaseScore(300)
+      }
+    }
+
+    createReward(400, groundY - 20)
     function startLevel() {
       // TODO 13 goes below here
 
