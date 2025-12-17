@@ -65,29 +65,20 @@ var runLevels = function (window) {
     createEnemy(500, groundY - 50);
     createEnemy(700, groundY - 50);
 
-    function createReward(x, y){
-      var coin = gamecreateGameItem("reward", 25)
-      var yellowCube = draw.rect(25, 25, "yellow")
-      yellowCube.x = -25
-      yellowCube.y = -25
-      coin.addChild(yellowCube)
+    function createReward(x,y){
+    var reward = game.createGameItem("reward", 25);
+    var coin = draw.rect(50, 50, "yellow");
+    coin.x = -25;
+    coin.y = -25;
+    reward.addChild(coin);
 
-      coin.x = x
-      coin.y = y
-      game.addGameItem(coin)
-
-      coin.velocityX = -5
-
-      coin.onPlayerCollision = function () {
-        game.increaseScore(100)
-      }
-
-      coin.onProjectileCollision = function () {
-        game.increaseScore(300)
-      }
+    reward.x = x;
+    reward.y = y;
+    game.addGameItem(coin);
     }
 
-    createReward(400, groundY - 20)
+    createReward(120, 234)
+    
     function startLevel() {
       // TODO 13 goes below here
 
