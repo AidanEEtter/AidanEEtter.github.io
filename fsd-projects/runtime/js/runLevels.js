@@ -67,7 +67,7 @@ var runLevels = function (window) {
 
     function createReward(x,y){
     var reward = game.createGameItem("reward", 25);
-    var coin = draw.rect(50, 50, "yellow");
+    var coin = draw.rect(50, 50, "gold");
     coin.x = -25;
     coin.y = -25;
     reward.addChild(coin);
