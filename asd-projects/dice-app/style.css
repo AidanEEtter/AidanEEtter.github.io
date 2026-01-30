@@ -1,6 +1,16 @@
 #die {
   height: 100px;
   width: 100px;
-  background-color: lightgray; /* Feel free to customize */
+  background-color: rgb(184, 185, 172); /* Feel free to customize */
   position: relative;
+  border-radius: 10px;
+}
+
+#die2 {
+  height: 100px;
+  width: 100px;
+  background-color:  rgb(116, 105, 105);
+  position: relative;
+  top: 25px;
+  border-radius: 10px;
 }

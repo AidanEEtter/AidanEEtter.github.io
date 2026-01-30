@@ -7,6 +7,7 @@ $("<div>")
   .css("position", "fixed")
   .css("top", 50)
   .css("left", 50)
+  .css("border-radius", 15)
   .appendTo("#die");
 
 function makeDot(top, left, elementID){
@@ -17,6 +18,7 @@ function makeDot(top, left, elementID){
     .css("position", "fixed")
     .css("top", top)
     .css("left", left)
+    .css("border-radius", 15)
     .appendTo(elementID);
 }
 
@@ -56,6 +58,7 @@ function rollDie(dieID){
 
 function handleClick() {
   rollDie("#die")
+  rollDie("#die2")
 }
 
 $("#die").on("click", handleClick);
