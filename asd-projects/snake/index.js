@@ -121,6 +121,15 @@ function moveSnake() {
     stored in the Array snake.body and each part knows its current 
     column/row properties. 
   */
+  for (var i = snake.body.length -1; i > 0; i--) {
+    var currentSnakeSquare = snake.body[i];
+    var snakeSquareInFront = snake.body[i - 1];
+
+    moveBodyAToBodyB(currentSnakeSquare, snakeSquareInFront);
+
+    repositionSquare(currentSnakeSquare);
+}
+
 
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
@@ -149,6 +158,11 @@ function moveSnake() {
 
 // TODO 9: Create a new helper function
 
+function moveBodyAToBodyB(bodyA, bodyB) {
+  bodyA.row = bodyB.row
+  bodyA.column =  bodyB.column
+  bodyA.direction = bodyB.direction
+  }
 
 function hasHitWall() {
   /* 
@@ -157,7 +171,9 @@ function hasHitWall() {
     
     HINT: What will the row and column of the snake's head be if this were the case?
   */
-
+if (snake.head.row > ROWS || snake.head.row < 0 || snake.head.column < 0 || snake.head.column > COLUMNS) {
+  return true;
+}
   return false;
 }
 
@@ -169,6 +185,9 @@ function hasCollidedWithApple() {
     HINT: Both the apple and the snake's head are aware of their own row and column
   */
 
+  if (snake.head.column == apple.column && snake.head.row == apple.row) {
+    return true
+  }
   return false;
 }
 
@@ -195,7 +214,11 @@ function hasCollidedWithSnake() {
     HINT: Each part of the snake's body is stored in the snake.body Array. The
     head and each part of the snake's body also knows its own row and column.
   */
-
+for (var i = 1; i < snake.body.length; i++) {
+  if (snake.head.column == snake.body[i].column && snake.head.row == snake.body[i].row) {
+    return true
+  }
+}
   return false;
 }
 
@@ -317,9 +340,10 @@ function getRandomAvailablePosition() {
 
   /* Generate random positions until one is found that doesn't overlap with the snake */
   while (!spaceIsAvailable) {
-    randomPosition.column = Math.floor(Math.random() * COLUMNS);
+    randomPosition.column = Math.floor(Math.random() * COLUMNS) ;
     randomPosition.row = Math.floor(Math.random() * ROWS);
-    spaceIsAvailable = true;
+     spaceIsAvailable = true;
+   
 
     /*
       TODO 14: After generating the random position determine if that position is
