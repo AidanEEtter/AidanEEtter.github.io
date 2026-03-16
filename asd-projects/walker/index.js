@@ -11,12 +11,17 @@ function runProgram() {
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
 
+  //Is tag started
+  var tag = false
+  var tagger = "null"
+  var runner = "null"
+
   // Game Item Objects
 
   //create walker
   var walker = {
-    x: 0,
-    y: 0,
+    x: randomPosition("x"),
+    y: randomPosition("y"),
     speedX: 0,
     speedY: 0,
     id: "#walker",
@@ -24,8 +29,8 @@ function runProgram() {
 
   //create friend
   var friend = {
-    x: 10,
-    y: 10,
+    x: randomPosition("x"),
+    y: randomPosition("y"),
     speedX: 0,
     speedY: 0,
     id: "#friend",
@@ -55,8 +60,12 @@ function runProgram() {
     SPACE: 32,
   };
 
+  //detect key presses
   $(document).on("keydown", handleKeyDown);
   $(document).on("keyup", handleKeyUp);
+
+   //start tag game
+  $("#startTag").on("click", startTag)
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -73,6 +82,17 @@ function runProgram() {
     repositionGameItem(friend);
     redrawGameItem(friend);
     wallCollision(friend);
+    if (tag === true) {
+      tagDetect(tagger, runner)
+    }
+    if (tagger === walker){
+      $("#walker").css("background-color", "red")
+      $("#friend").css("background-color", "rgb(14, 244, 206)")
+    }
+    if (tagger === friend) {
+      $("#friend").css("background-color", "red")
+      $("#walker").css("background-color", "rgb(244, 14, 233)")
+    }
   }
 
   /* 
@@ -111,7 +131,7 @@ function runProgram() {
     }
     // Check if objct updates correctly
     else if (event.which === KEY.SPACE) {
-      console.log("Walker position:", walker.x, walker.y);
+      console.log($("#board").width());
     }
   }
 
@@ -173,7 +193,57 @@ function runProgram() {
       object.x -= object.speedX;
     }
     if (object.y + 50 >= $("#board").height() || object.y <= 0) {
-      object.y -= object.speedY;
+      object.y -= object.speedY
+    }
+
+
+  }
+  //randomize position genorator
+  function randomPosition(XorY){
+    if (XorY === "x") {
+     return Math.floor(Math.random() * 339.77892 - 1) + 1
+    }
+    else if (XorY === "y") {
+     return Math.floor(Math.random() * 339.77892 - 1) + 1
+    }
+  }
+
+  //randomize object positions
+  function objectRPG(object){
+    object.x = randomPosition("x");
+    object.y = randomPosition("y")
+  }
+  //start the game of tag
+  function startTag(){
+    tag = true
+    var choose = Math.floor(Math.random() * (10 - 1)) + 1
+    if (choose > 5){
+      tagger = walker
+      runner = friend
+    }
+    else if (choose <= 5){
+      $("#friend").css("background-color", "red")
+      tagger = friend
+      runner = walker
+    }
+    $("#startTag").css("display", "none")
+
+    objectRPG(walker)
+    objectRPG(friend)
+  }
+
+  //tag functions
+  
+  
+  // detect a tag
+  function tagDetect(hunter, hider){
+    if (hunter.x < hider.x + 50 && hunter.x + 50 > hider.x && hunter.y < hider.y + 50 && hunter.y + 50 > hider.y){
+      var sub = hider
+      runner = tagger
+      tagger = sub
+
+      objectRPG(walker)
+      objectRPG(friend)
     }
   }
 }

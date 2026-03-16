@@ -32,3 +32,13 @@ body {
   background-color: rgb(14, 244, 206);
   position: absolute;
 }
+
+#tag {
+  right: 3;
+  background-color: rgb(116, 120, 119);
+  width: 440px
+}
+
+#startTag{
+  background-color: white
+}
