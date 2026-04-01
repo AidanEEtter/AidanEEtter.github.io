@@ -242,8 +242,15 @@ function runProgram() {
       runner = tagger
       tagger = sub
 
+      hunter.speedX = 0
+      hunter.speedY = 0
+      hider.speedX = 0
+      hider.speedY = 0
+      
       objectRPG(walker)
       objectRPG(friend)
+      alert("Tag your it!")
+      
     }
   }
 }
