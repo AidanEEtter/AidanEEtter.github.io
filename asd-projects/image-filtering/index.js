@@ -20,10 +20,9 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-   applyFilter(noMoreGreen);
-   applyFilterNoBackground(increaseGreenByBlue);
+  applyFilter(noMoreGreen);
+  applyFilterNoBackground(increaseGreenByBlue);
   applyFilter(increaseBluebyLot);
-  
    // do not change the below line of code
   render($("#display"), image);
 }
@@ -118,4 +117,11 @@ function applyFilter(filterFunction){
   function noMoreGreen(array){
     array[GREEN] = 0
     array[GREEN] = keepInBounds(array[GREEN])
+  }
+
+//create invertColors
+  function invertColors(array){
+    array[RED] = 255 - array[RED]
+    array[GREEN] = 255 - array[GREEN] 
+    array[BLUE] = 255 - array[BLUE]
   }
