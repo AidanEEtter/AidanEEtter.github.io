@@ -16,6 +16,44 @@ body {
   width: 50px;
   height: 50px;
   position: absolute;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  left: 100px; /* Uncomment if you want to set a "starting" position */ 
+  top: 100px; /* Uncomment if you want to set a "starting" position */
 }
+
+#ball {
+  /* appearance */
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+
+  /* positioning */
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+#leftPaddle {
+  /* appearance */
+  background-color: rgb(97, 3, 144);
+  width: 20px;
+  height: 80px;
+
+  /* positioning */
+  position: absolute;
+  top: 180px;
+  left: 100px;
+}
+
+#rightPaddle {
+  /* appearance */
+  background-color: rgb(61, 202, 5);
+  width: 20px;
+  height: 80px;
+
+  /* positioning */
+  position: absolute;
+  top: 180px;
+  left: 120px;
+}
+
