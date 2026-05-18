@@ -198,4 +198,3 @@ function runProgram() {
     // turn off event handlers
     $(document).off();
   }
-}
