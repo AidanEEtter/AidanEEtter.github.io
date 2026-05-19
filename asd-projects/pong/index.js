@@ -15,7 +15,7 @@ function runProgram() {
 
   // Movement values
 
-  var KEYCODE = {
+  const KEYCODE = {
     UPLEFT: 87,
     UPRIGHT: 38,
     DOWNLEFT: 83,
@@ -56,9 +56,9 @@ function runProgram() {
     console.log(ball.speedX)
     var randomNumY = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
     ball.speedY = randomNumY;
-     console.log(ball.speedY)
-    ball.x = BOARD_WIDTH / 2
-    ball.y = BOARD_HEIGHT / 2
+     console.log(ball.speedY);
+    ball.x = BOARD_WIDTH / 2;
+    ball.y = BOARD_HEIGHT / 2;
   }
   function startPaddle() {
     leftPaddle.x = 0
@@ -141,7 +141,7 @@ function runProgram() {
     }
     }
     
-  }
+  
 
   /* 
   Called in response to events.
@@ -155,7 +155,7 @@ function runProgram() {
       //console.log("S pressed");
       leftPaddle.speedY = 10
     }
-      if (event.which === KEYCODE.UPRIGHT) {
+      else if (event.which === KEYCODE.UPRIGHT) {
       //console.log("UP pressed");
       rightPaddle.speedY = -10
     } else if (event.which === KEYCODE.DOWNRIGHT) {
@@ -198,3 +198,4 @@ function runProgram() {
     // turn off event handlers
     $(document).off();
   }
+}
